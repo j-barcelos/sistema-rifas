@@ -551,6 +551,7 @@ fieldset {
     border: 1px solid var(--borda);
     border-radius: var(--raio);
     padding: 1.75rem;
+    margin-bottom: 1.5rem;
 }
 
 legend {
@@ -611,6 +612,62 @@ input::placeholder, textarea::placeholder {
     gap: 1rem;
     margin-top: 1.5rem;
     flex-wrap: wrap;
+}
+
+/* ==================== ESTADOS DO FORMULÁRIO ==================== */
+
+.campo.invalido input {
+    border-color: var(--vermelho);
+    box-shadow: 0 0 0 3px var(--vermelho-claro);
+}
+
+.campo.valido input {
+    border-color: var(--verde);
+}
+
+.feedback {
+    display: none;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    font-weight: 600;
+}
+
+.feedback.erro {
+    display: block;
+    color: var(--vermelho);
+}
+
+.feedback.sucesso {
+    display: block;
+    color: var(--verde);
+}
+
+.feedback.aviso {
+    display: block;
+    color: var(--amarelo);
+}
+
+input[readonly] {
+    background: var(--superficie-2);
+    color: var(--texto-secundario);
+    cursor: not-allowed;
+}
+
+/* Spinner durante a requisição fetch */
+.carregando {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--borda-forte);
+    border-top-color: var(--ouro);
+    border-radius: 50%;
+    animation: girar 0.8s linear infinite;
+    vertical-align: middle;
+    margin-right: 0.35rem;
+}
+
+@keyframes girar {
+    to { transform: rotate(360deg); }
 }
 
 /* ========================= RODAPÉ ========================= */
