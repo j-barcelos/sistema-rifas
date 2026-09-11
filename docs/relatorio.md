@@ -2,111 +2,43 @@
 
 ---
 
-## 1. Introdução
+## 1. Trabalho 1 — Interface Semântica, Responsiva e Acessível
 
-O projeto **Rifa Royale** consiste em uma interface gráfica para um sistema de gestão de vendas de rifas de videogames, desenvolvida utilizando **HTML5** e **CSS3**. A aplicação foi criada com o objetivo de permitir a visualização das rifas cadastradas, o acompanhamento das vendas e o cadastro de novas rifas, tudo em um ambiente visualmente atraente e funcional.
+**Realizado em: 05/09**
 
-A interface foi desenvolvida considerando princípios de **estrutura semântica**, **responsividade**, **acessibilidade** e **organização do código**, conforme as boas práticas estudadas em referências como *Head First HTML and CSS*.
+O primeiro trabalho teve como objetivo desenvolver uma interface gráfica do usuário (GUI) para o front-end de uma aplicação web, priorizando aspectos de semântica, responsividade e acessibilidade.
 
-O sistema possui:
-- Um **painel inicial (Dashboard)** com informações resumidas (rifas ativas, vendas realizadas, faturamento e próximo sorteio).
-- Uma **área de gerenciamento de rifas**, com uma tabela detalhada.
-- Uma **área de controle de vendas**, com histórico das últimas transações.
-- Um **formulário para cadastro de novas rifas**.
+Como parte da atividade assíncrona, foram consultados os capítulos introdutórios sobre estrutura semântica e boas práticas de CSS apresentados por **Freeman & Freeman**. A partir desses conceitos, foi desenvolvida uma página web utilizando **HTML5 e CSS3** para o cadastro e a visualização de dados de um sistema de gestão.
 
----
+A estrutura da página foi organizada utilizando elementos semânticos do HTML5, buscando representar adequadamente a finalidade de cada parte do conteúdo. A utilização de elementos como `header`, `nav`, `main`, `section`, `form` e `footer` contribui para uma estrutura mais organizada, facilita a interpretação do conteúdo por diferentes agentes e melhora a manutenção do código.
 
-## 2. Utilização de HTML5 Semântico
+O elemento `header` foi utilizado para representar o cabeçalho da aplicação, enquanto `nav` foi destinado à área de navegação. O conteúdo principal foi agrupado em `main`, com a utilização de `section` para separar áreas relacionadas da interface. Para o cadastro de informações, foi utilizado o elemento `form`, juntamente com campos de entrada adequados aos diferentes tipos de dados.
 
-A estrutura da página utiliza elementos semânticos do **HTML5** para representar adequadamente cada parte da interface, melhorando a acessibilidade e a manutenção do código.
+Além da estrutura semântica, foram aplicadas técnicas de CSS para organizar o layout e proporcionar uma apresentação consistente. A interface foi planejada de forma responsiva, permitindo sua adaptação a diferentes resoluções e tamanhos de tela. Dessa maneira, o usuário pode acessar a aplicação tanto em computadores quanto em dispositivos com telas menores.
 
-- **`<header>`**: Representa o cabeçalho da aplicação, contendo a **identidade visual da marca Rifa Royale** (nome, slogan e ícone).
-- **`<nav>`**: Representa a navegação principal, com links para as seções: **Dashboard, Rifas, Vendas e Cadastrar Rifa**.
-- **`<main>`**: Identifica semanticamente o conteúdo principal do documento, onde estão todas as seções funcionais.
-- **`<section>`**: Utilizado para separar as funcionalidades do sistema:
-  - `dashboard`: Painel de gestão com cartões de métricas.
-  - `rifas`: Tabela de rifas cadastradas.
-  - `vendas`: Tabela de vendas recentes.
-  - `cadastro`: Formulário para cadastro de novas rifas.
-- **`<article>`**: Cada cartão do dashboard é representado por um `<article>`, pois apresentam informações independentes (ex.: rifas ativas, vendas realizadas).
-- **`<table>`**: Utilizado para organizar dados tabulares (rifas e vendas). Cada tabela possui:
-  - **`<caption>`**: Descreve o propósito da tabela.
-  - **`<th scope="col">`**: Indica semanticamente os cabeçalhos das colunas.
-- **`<footer>`**: Contém informações de rodapé, como direitos autorais e descrição do projeto.
+A preocupação com acessibilidade também esteve presente na construção dos formulários e na organização visual dos elementos, buscando facilitar a compreensão e a utilização da interface. Dessa forma, o Trabalho 1 estabeleceu a base estrutural e visual necessária para a evolução da aplicação.
 
----
+## 2. Trabalho 2 — JavaScript, Validações e Requisições Assíncronas
 
-## 3. Formulário e Acessibilidade
+**Implementado em: 11/09**
 
-O **cadastro de rifas** foi implementado utilizando o elemento **`<form>`**, com campos organizados de forma semântica e acessível:
+O segundo trabalho teve como objetivo acrescentar dinamicidade à interface desenvolvida anteriormente, utilizando **JavaScript**, manipulação do DOM, eventos e requisições HTTP assíncronas.
 
-- **`<fieldset>` e `<legend>`**: Agrupam os campos do formulário e fornecem um título descritivo ("Informações da rifa"), facilitando a compreensão para usuários e tecnologias assistivas.
-- **`<label>`**: Cada campo possui um `<label>` associado ao controle correspondente via atributos `for` e `id`.
-- **Tipos de entrada HTML5**:
-  - `text`: Nome da rifa e prêmio.
-  - `number`: Valor por número e quantidade de números.
-  - `date`: Data do sorteio.
-  - `select`: Status da rifa (Ativa/Encerrada).
-  - `textarea`: Descrição do prêmio.
-- **Validação nativa**: Campos obrigatórios possuem o atributo `required`.
-- **Estados de foco**: Utilização de `:focus-visible` para destacar elementos interativos (campos, botões, links) quando navegados via teclado, garantindo acessibilidade para usuários que não utilizam mouse.
+A principal necessidade identificada foi permitir que o formulário realizasse validações antes do envio dos dados, evitando o preenchimento incorreto ou incompleto dos campos. Para isso, foram implementadas validações no lado do cliente, fornecendo respostas imediatas ao usuário e melhorando a experiência de utilização do sistema.
 
----
+Também foi implementada a consulta automática de endereço a partir de um CEP informado pelo usuário. Essa funcionalidade utiliza uma requisição assíncrona, realizada por meio de `fetch/Ajax`, para obter os dados do endereço e preencher dinamicamente os campos correspondentes da interface.
 
-## 4. CSS e Responsividade
+A utilização de JavaScript possibilitou a manipulação dos elementos da página por meio do **DOM**, bem como a execução de ações em resposta aos eventos gerados pelo usuário. Esses recursos permitiram transformar a interface inicialmente estática em uma aplicação mais interativa.
 
-O **CSS** foi desenvolvido em arquivo separado (`style.css`), seguindo as melhores práticas de organização e manutenção:
+As técnicas utilizadas foram relacionadas aos conceitos de manipulação do DOM e eventos apresentados por **Michael**, enquanto a utilização de requisições assíncronas foi fundamentada nos conceitos de **Ajax** descritos por **Riordan**.
 
-- **Variáveis CSS**: Centralizadas em `:root` para facilitar a manutenção e consistência visual. Incluem:
-  - Cores de fundo, texto e bordas.
-  - Paleta de cores temática (dourado, azul, verde, vermelho, roxo, laranja).
-  - Sombras, raios de borda e gradientes.
-- **Layout com CSS Grid**:
-  - Cartões do dashboard organizados em grid responsivo.
-  - Campos do formulário organizados em grid de 2 colunas (1 coluna em telas menores).
-- **Media Queries**: Adaptam a interface para diferentes tamanhos de tela:
-  - Em telas **≤ 900px**: Cartões do dashboard passam para 2 colunas.
-  - Em telas **≤ 700px**: Cartões para 1 coluna, formulário em coluna única, botões ocupam 100% da largura.
-  - Em telas **≤ 500px**: Navegação compacta, ícone da marca reduzido.
-- **Tabelas responsivas**: Contêiner com `overflow-x: auto` permite rolagem horizontal em telas pequenas.
-- **Altura mínima de elementos interativos**: Botões e campos de formulário possuem altura adequada para interação em dispositivos móveis.
+Um dos principais benefícios da implementação assíncrona é que a consulta do endereço ocorre sem a necessidade de recarregar toda a página. Dessa forma, apenas as informações necessárias são atualizadas, tornando a interação mais rápida e proporcionando uma experiência mais próxima de uma aplicação web dinâmica.
 
----
+## 3. Conclusão
 
-## 5. Organização Visual e Identidade
+Os dois trabalhos foram desenvolvidos de maneira incremental. O **Trabalho 1**, realizado em 05/09, estabeleceu a estrutura HTML5, a organização semântica, o estilo CSS3 e a responsividade da interface. O **Trabalho 2**, implementado em 11/09, acrescentou comportamento dinâmico por meio de JavaScript, validações no lado do cliente e requisições assíncronas para consulta e preenchimento automático de dados.
 
-A interface do **Rifa Royale** adota uma **identidade visual premium**, inspirada no universo dos videogames, com as seguintes características:
-
-- **Tema Light**:
-  - Fundo claro (`#f8fafc`), superfícies brancas (`#ffffff`) e texturas sutis.
-  - Cores de texto escuras (`#1e293b`) para melhor legibilidade.
-- **Paleta de cores temática**:
-  - **Dourado** (`#c99b3f` a `#f7e3a1`): Usado em títulos, botões principais, ícones e destaques.
-  - **Azul** (`#3b82f6`): Cartão de rifas ativas.
-  - **Verde** (`#10b981`): Status "Ativo" e "Pago".
-  - **Vermelho** (`#ef4444`): Status "Encerrada".
-  - **Laranja** (`#f97316`): Cartão de próximo sorteio.
-  - **Roxo** (`#8b5cf6`): Cartão de faturamento.
-- **Status visuais**:
-  - Diferença por cores **e** texto (ex.: "Ativa", "Pago", "Pendente", "Encerrada"), evitando dependência exclusiva de cores.
-- **Dashboard**:
-  - Cartões com informações resumidas (rifas ativas, vendas, faturamento, próximo sorteio) e efeito de hover.
-- **Progresso de vendas**:
-  - Barras de progresso com gradiente dourado, indicando visualmente a porcentagem de números vendidos.
-
----
-
-## 6. Conclusão
-
-O projeto **Rifa Royale** demonstra a aplicação prática de **HTML5 semântico** e **CSS3 moderno** na construção de uma interface de sistema de gestão de rifas de videogames. A utilização de elementos semânticos como `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<form>`, `<fieldset>`, `<table>` e `<footer>` proporciona uma estrutura **organizada, acessível e significativa**.
-
-As técnicas de **CSS** empregadas garantem uma interface **responsiva**, visualmente consistente e adaptável a diferentes dispositivos. Recursos de **acessibilidade**, como associação entre labels e campos, foco visível, validação nativa e estrutura semântica, foram integralmente considerados.
-
-### Evoluções Futuras
-Para tornar o sistema funcional, a interface poderia ser integrada a:
-- **JavaScript**: Para validação dinâmica, interatividade e atualização em tempo real.
-- **API ou Banco de Dados**: Para persistência de dados (cadastro de rifas, registro de vendas, atualização de status).
-- **Automação**: Geração de relatórios de vendas, notificações de sorteios e controle de estoque de números.
+A evolução entre as duas etapas demonstra a integração entre **HTML5, CSS3 e JavaScript**, resultando em uma interface mais organizada, responsiva, interativa e adequada às necessidades de um sistema de gestão.
 
 ---
 **Projeto acadêmico desenvolvido por j-barcelos — 2026**
